@@ -69,7 +69,7 @@
                 const cacheBuster = new Date().getTime();
                 const response = await fetch(`https://labs.bible.org/api/?passage=random&type=json&cacheBuster=${cacheBuster}`);
                 const data = await response.json();
-                const verse = `${data[0].bookname} ${data[0].chapter}:${data[0].verse} - ${data[0].text}`;
+                const verse = `${data[0].bookname} ${data[0].chapter}:----------${data[0].verse} - ${data[0].text}`;
                 document.getElementById('verse').innerText = verse;
             } catch (error) {
                 document.getElementById('verse').innerText = 'Sorry, something went wrong. Please try again later.';
